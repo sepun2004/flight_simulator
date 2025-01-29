@@ -20,6 +20,7 @@ Este es un simulador de vuelo desarrollado en **C** utilizando **SDL2**. El prog
 ### 🔧 Compilación:
 ```bash
 gcc main.c -o simulador -lSDL2 -lSDL2_ttf -lSDL2_image -lm
+```
 
 ## Controles
 
