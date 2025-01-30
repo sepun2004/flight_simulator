@@ -1,6 +1,6 @@
 # ✈️ Simulador de Vuelo en SDL2
 
-Este es un simulador de vuelo desarrollado en **C** utilizando **SDL2**. El programa permite controlar un avión en un entorno 2D, con detección de colisiones y renderizado de elementos como el suelo y los aros de paso.
+Este es un simulador de vuelo desarrollado en **C** utilizando **SDL2**. El programa permite controlar un avión en un entorno 3D, con detección de colisiones y renderizado de elementos como el suelo y los aros de paso.
 
 ## 🚀 Características
 - Simulación de movimiento del avión con controles de teclado.
