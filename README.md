@@ -68,6 +68,26 @@ Registra las teclas presionadas y almacenadas en un array keys[] para gestionar 
             keys[event.key.keysym.scancode] = false; // Marca la tecla como liberada
     }
 
+    while (SDL_PollEvent(&event))
+        {
+            if (event.type == SDL_QUIT)
+                running = false;
+            else
+                entrada_teclado(event);         
+        }
+        if (keys[SDL_SCANCODE_UP])
+            avion.phi += PI / 180;
+        if (keys[SDL_SCANCODE_DOWN])
+            avion.phi -= PI / 180;
+        if (keys[SDL_SCANCODE_LEFT])
+            avion.theta -= PI / 180;
+        if (keys[SDL_SCANCODE_RIGHT])
+            avion.theta += PI / 180;
+        if (keys[SDL_SCANCODE_W])
+            avion.v += PI / 180;
+        if (keys[SDL_SCANCODE_S])
+            avion.v -= PI / 180;
+
 ```
 ### Explicacion :
 - Detecta eventos de teclado y almacena su estado en keys[].
