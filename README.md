@@ -114,7 +114,7 @@ Dibuja los aros en pantalla, ajustando su tamaño y posición en función de la 
 
 <p align="center">
   <img src="https://github.com/sepun2004/flight_simulator/blob/main/avion_final1.png" alt="Imagen 1" width="49%"/>
-  <img src="https://github.com/sepun2004/flight_simulator/blob/main/avion_final2.png" alt="Imagen 2" width="49%"/>
+  <img src="https://github.com/sepun2004/flight_simulator/blob/main/avion_final2.png" alt="Imagen 2" width="50%"/>
   <img src="https://github.com/sepun2004/flight_simulator/blob/main/avion_final3.png" alt="Imagen 2" width="100%"/>
 </p>
 
