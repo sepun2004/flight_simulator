@@ -34,7 +34,7 @@ gcc main.c -o simulador -lSDL2 -lSDL2_ttf -lSDL2_image -lm
 | S | Disminuir velocidad |
 
 ## Función `pintar_tierra`
-
+Dibuja la imagen del suelo ajustando su posición y ángulo en función de la inclinación del avión.
 ```c
 void pintar_tierra(avion_t *avion) {
     float theta_radianes = avion->theta * PI / 180;
@@ -58,6 +58,61 @@ void pintar_tierra(avion_t *avion) {
 - Reinicia el avión si choca con el suelo.
 
 ## Funcion `entrada_teclado`
+Registra las teclas presionadas y almacenadas en un array keys[] para gestionar las entradas del usuario.
+```c
+    void entrada_teclado(SDL_Event event)
+    {
+        if (event.type == SDL_KEYDOWN)
+            keys[event.key.keysym.scancode] = true; // Marca la tecla como presionada
+        else if (event.type == SDL_KEYUP)
+            keys[event.key.keysym.scancode] = false; // Marca la tecla como liberada
+    }
+
+```
+### Explicacion :
+- Detecta eventos de teclado y almacena su estado en keys[].
+- Esto permite comprobar en el bucle principal si una tecla está siendo presionada sin necesidad de detectar eventos en cada iteración.
+
+
+## Funcion `dibujar_aros`
+Dibuja los aros en pantalla, ajustando su tamaño y posición en función de la perspectiva del avión.
+```c
+    void dibujar_aros(aro_t *aros, avion_t *avion)
+    {
+        for (int i = 0; i < NUM_AROS; i++)
+        {
+            if (aros[i].texture == NULL)
+            {
+                printf("Error  %d: %s\n", i, IMG_GetError());
+                continue;
+            }
+            
+            if (avion->phi > PI / 2 && avion->phi < 3 * PI / 2)
+                continue; // No dibujar si el avión está mirando hacia atrás
+    
+            float scale = 1.0f / (1.0f + aros[i].z / 100.0f);
+            int x = SCREEN_WIDTH / 2 + (aros[i].x - avion->x) * scale;
+            int y = SCREEN_HEIGHT / 2 - (aros[i].y - avion->y) * scale;
+            int size = aros[i].size;
+    
+            float desplazamientoY = tan(avion->phi) * SCREEN_HEIGHT / 2;
+            y += desplazamientoY;
+            
+            SDL_Rect rect = {x - size / 2, y - size / 2, size, size};
+            SDL_RenderCopy(renderer, aros[i].texture, NULL, &rect);
+        }
+    }
+```
+### Explicacion :
+- Ajusta la escala de los aros según la distancia del avión.
+- No muestra los aros si el avión está mirando hacia atrás.
+- Usa SDL_RenderCopy() para renderizar la textura en la pantalla.
+
+
+### 📷 Capturas de Pantalla
+
+
+
 
 
 
