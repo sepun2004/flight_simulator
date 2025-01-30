@@ -111,8 +111,13 @@ Dibuja los aros en pantalla, ajustando su tamaño y posición en función de la 
 
 ### 📷 Capturas de Pantalla
 
-![Descripción de la imagen](https://github.com/sepun2004/flight_simulator/blob/main/avion_final1.png)![Descripción de la imagen](https://github.com/sepun2004/flight_simulator/blob/main/avion_final2.png)
-![Descripción de la imagen](https://github.com/sepun2004/flight_simulator/blob/main/avion_final3.png)
+
+<p align="center">
+  <img src="https://github.com/sepun2004/flight_simulator/blob/main/avion_final1.png" alt="Imagen 1" width="45%"/>
+  <img src="https://github.com/sepun2004/flight_simulator/blob/main/avion_final2.png" alt="Imagen 2" width="45%"/>
+  <img src="https://github.com/sepun2004/flight_simulator/blob/main/avion_final3.png" alt="Imagen 2" width="100%"/>
+</p>
+
 
 
 
